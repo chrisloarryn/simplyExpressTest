@@ -1,4 +1,3 @@
-const express = require('express')
 const dotenv = require('dotenv')
 // const fs = require('fs')
 
@@ -10,12 +9,9 @@ const dotenv = require('dotenv')
 //   }
 //   console.log('wrote file')
 // })
-const app = express()
+const app = require('./app')
 dotenv.config({ path: './.env' })
 
-app.get('/', (req, res) => {
-  res.send('<h1>My node app</h1>')
-})
 const port = 5000
 app.listen(process.env.PORT, () => {
   console.log('App listening on port:', process.env.PORT)
